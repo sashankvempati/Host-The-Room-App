@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>258260858299-o24qmh2605nvlieujpogb2daclo559oe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.258260858299-o24qmh2605nvlieujpogb2daclo559oe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDcS-_xbsOCNWZ8NhYnB8EuaBzYkFdki_U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>258260858299</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.roomapp.Host-The-Room-App</string>
+	<key>PROJECT_ID</key>
+	<string>the-roomapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>the-roomapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:258260858299:ios:60563bcc531312fd67409e</string>
+	<key>DATABASE_URL</key>
+	<string>https://the-roomapp.firebaseio.com</string>
+</dict>
+</plist>
