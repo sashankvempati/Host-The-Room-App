@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -25,6 +26,12 @@ class MyRoomsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+    }
+    
+    func loadPosts(){
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,8 +80,24 @@ class MyRoomsViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
             //vc?.price = priceArray[indexPath.row]
         */
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("Rooms").document("aE7zP3IryV7ldLjNY15w")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+
+        
+        
         
         self.navigationController?.pushViewController(vc!, animated: true)
+        
         
     }
     

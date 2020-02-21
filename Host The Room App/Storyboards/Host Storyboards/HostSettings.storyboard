@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wrt-Hl-Ydf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wrt-Hl-Ydf">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,11 +39,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Payments"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnL-6E-y5k">
+                                <rect key="frame" x="112.66666666666669" y="388" width="150" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.87058823529411766" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lqz-K6-ydc"/>
+                                    <constraint firstAttribute="width" constant="150" id="mxr-BF-6S3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Switch to User"/>
+                                <connections>
+                                    <segue destination="M3s-iO-iid" kind="presentation" modalPresentationStyle="fullScreen" id="PPb-DL-mhL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CIL-3l-3nA" firstAttribute="centerX" secondItem="7NK-2c-3Zk" secondAttribute="centerX" id="GNQ-X1-bg3"/>
+                            <constraint firstItem="fnL-6E-y5k" firstAttribute="top" secondItem="hHq-QS-vg7" secondAttribute="bottom" constant="50" id="bTy-CI-1XY"/>
                             <constraint firstItem="hHq-QS-vg7" firstAttribute="centerX" secondItem="7NK-2c-3Zk" secondAttribute="centerX" id="btu-ci-OAX"/>
+                            <constraint firstItem="fnL-6E-y5k" firstAttribute="centerX" secondItem="7NK-2c-3Zk" secondAttribute="centerX" id="gVO-7O-l5U"/>
                             <constraint firstItem="hHq-QS-vg7" firstAttribute="top" secondItem="CIL-3l-3nA" secondAttribute="bottom" constant="50" id="pPx-uR-CQQ"/>
                             <constraint firstItem="CIL-3l-3nA" firstAttribute="top" secondItem="rEV-R6-lHw" secondAttribute="top" constant="100" id="x5J-Gl-7kr"/>
                         </constraints>
@@ -63,6 +78,16 @@
             </objects>
             <point key="canvasLocation" x="742.02898550724649" y="-54.241071428571423"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="FHa-qK-qyO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="M3s-iO-iid" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZKn-1U-42L"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AW6-Xd-wAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="63"/>
+        </scene>
         <!--My Profile-->
         <scene sceneID="vfu-SD-JgB">
             <objects>
@@ -71,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-2G-0sQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled drawing" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-2G-0sQ">
                                 <rect key="frame" x="112.66666666666669" y="108" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0o9-h1-F5A"/>
@@ -183,13 +208,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bur-ak-ynl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="-54.241071428571423"/>
+            <point key="canvasLocation" x="1780" y="-55"/>
         </scene>
         <!--Settings-->
         <scene sceneID="oZL-Kp-hlc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wrt-Hl-Ydf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="Pvp-lk-gzf"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle" id="Pvp-lk-gzf"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lap-Ke-nYK">
@@ -206,4 +231,8 @@
             <point key="canvasLocation" x="-168.11594202898553" y="-54.241071428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Untitled drawing" width="478" height="853"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uj2-dO-Cn0">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reserved Rooms-->
+        <scene sceneID="FwX-65-sfV">
+            <objects>
+                <viewController id="jUw-1l-K2y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lvn-BJ-K1H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZrI-fn-dua"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reserved Rooms" id="IUw-hP-4z5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeW-fr-9Th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="49.50738916256158"/>
+        </scene>
+        <!--Reserved-->
+        <scene sceneID="u10-PW-Fen">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uj2-dO-Cn0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reserved" image="house.fill" catalog="system" selectedImage="house.fill" id="Xn0-Kv-HkN"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F1q-Jc-jJn">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jUw-1l-K2y" kind="relationship" relationship="rootViewController" id="RF6-a6-KGU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feK-TF-WnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="49.50738916256158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+    </resources>
+</document>

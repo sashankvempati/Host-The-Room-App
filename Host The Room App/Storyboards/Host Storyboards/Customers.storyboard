@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hBh-Ql-K58">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hBh-Ql-K58">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,12 +23,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomersTableViewCell" rowHeight="125" id="IOY-Lz-RT0" customClass="CustomersTableViewCell" customModule="Host_The_Room_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IOY-Lz-RT0" id="HKm-Kd-9NN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124.66666666666667"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IOY-Lz-RT0" id="HKm-Kd-9NN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xhM-xo-JTX">
-                                                    <rect key="frame" x="15" y="12.666666666666664" width="100" height="100"/>
+                                                    <rect key="frame" x="15" y="12.666666666666664" width="100" height="100.33333333333334"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="ZQZ-4h-hxZ"/>
                                                         <constraint firstAttribute="height" constant="100" id="nz7-mS-pgg"/>
@@ -324,7 +322,7 @@
         <scene sceneID="jZX-eD-DcQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hBh-Ql-K58" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Customers" id="Ohh-fV-UE0"/>
+                    <tabBarItem key="tabBarItem" title="Customers" image="person.3.fill" catalog="system" id="Ohh-fV-UE0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="owJ-Sy-2c2">
@@ -341,4 +339,7 @@
             <point key="canvasLocation" x="-865" y="689"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
+    </resources>
 </document>

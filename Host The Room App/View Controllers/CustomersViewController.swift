@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class CustomersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -52,6 +54,58 @@ class CustomersViewController: UIViewController, UITableViewDataSource, UITableV
         vc?.hours = hoursArray[indexPath.row]
         vc?.cost = amountArray[indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
+        
+        
+        /*testing to see if Room details work (This works)
+        let savedAddress = UserDefaults.standard.string(forKey: "currAddress")
+        let savedDesc = UserDefaults.standard.string(forKey: "currDescription")
+        let storedImageURL = UserDefaults.standard.string(forKey: "currImageURL")
+        let storedPrice = UserDefaults.standard.string(forKey: "currPrice")
+        let storedUID = UserDefaults.standard.string(forKey: "currUID")
+        
+        print(savedAddress!)
+        print(savedDesc!)
+        print(storedImageURL!)
+        print(storedPrice!)
+        print(storedUID!)
+        */
+        
+        /** This is to query the data of a house based on the UID */
+        let dataReference = Firestore.firestore().collection("Rooms").document()
+        let documentUid = dataReference.documentID
+        let storedUID = UserDefaults.standard.string(forKey: "currUID")
+
+        Firestore.firestore().collection("Rooms").whereField("document UID", isEqualTo: storedUID)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("this thing works")
+                        
+                        //This retrieves all elements of a post
+                        
+                        /** Note: These may be global variables so that these strings are more accessible */
+                        let storedAddress = document.get("address")! as! String
+                        let storedDesc = document.get("description")! as! String
+                        let storedImageUrl = document.get("image URL")! as! String
+                        let storedPrice = document.get("price")! as! String
+                        let storedUID = document.get("document UID")! as! String
+                        print(storedAddress)
+                        print("\(document.documentID) => \(document.data()), Address: \(document.get("address")!)")
+                        
+                        
+                        //Just to confirm that Userdefaults works for address
+                        let savedAddress = UserDefaults.standard.string(forKey: "currAddress")
+                        print(savedAddress!)
+
+                    }
+                }
+        }
+
+        
+        
+        
     }
     
 
