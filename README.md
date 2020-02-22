@@ -1,13 +1,14 @@
 # The RoomApp
 # KEY: 
  **@IB Action** Action event buttons that executes a function when triggered
+ 
  **GOTO** Navigates to a particular View Controller/ Screen
+ 
  **DISMISS** Show what buttons there are to dismiss a popup error message
- **For Notifications and automatic messages from App** An A.I. bot sends these messages/ notifications/ instructions 
-    to both user and host through the chat. This can be used to get any sort of help within the app and service. 
-    This wont spam your chats. 
-    To chat with this bot, user switches mode to "bot" from "host"/ "user" that is right beside the message entry text field
-    **Possible name: Mac**
+ 
+ **For Notifications and automatic messages from App** An A.I. bot sends these messages/ notifications/ instructions to both user and host through the chat. This can be used to get any sort of help within the app and service. This wont spam your chats. To chat with this bot, user switches mode to "bot" from "host"/ "user" that is right beside the message entry text field
+    
+**Possible name: Mac**
 
 # User
 
