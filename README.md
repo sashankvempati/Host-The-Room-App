@@ -1,4 +1,4 @@
-# The RoomApp
+# The RoomApp- Algorithm
 # KEY: 
  **@IB Action** Action event buttons that executes a function when triggered
  
