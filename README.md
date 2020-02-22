@@ -108,6 +108,7 @@ User cannot reserve a space without verifying their account.
 
 ## User goes to Terms and Conditions (very explicit, strict regulations to avoid misusing)
 **@IBAction** when user clicks on "Agree" and checks all the boxes {
+
     if any of the boxes are not checked {
         Error Message: "Please make sure you agree to all the terms and conditions before proceeding"
         DISMISS: "OK"
@@ -120,6 +121,7 @@ User cannot reserve a space without verifying their account.
 ### if this is a user's first time coming to this view controller after logging in OR if the "filters" button is pressed
 
 **@IBAction** when all filters are set (date, time, location, distance, price) {
+
     query the database based on these parameters
     For time:
     - Actual clock (12:15pm, 2:45 pm)
@@ -132,12 +134,14 @@ User cannot reserve a space without verifying their account.
 }
 
 **@IBAction** when "Map" button is pressed at top right corner {
+
     Show a google maps view of all listings, put dots at corressponding listings
 }
 
 ### User browses through/ books a space
 
 **@IBAction** when user clicks on a listing {
+
     Query the database for the image, description, price, people capacity general area of space in maps with a circle
     Query the database for the host's profile picture, bio, star rating
     Button: "Book Now"
@@ -148,6 +152,7 @@ User cannot reserve a space without verifying their account.
 }
 
 **@IBAction** when user confirms number of people {
+
     GOTO: Confirmation View Controller to give a receipt- breakup of expenses (cost price, service charges, tax)
     Charge user's credit card using Stripe's API/ Payment Method
     2% + $0.30 of total cost goes to Stripe 
@@ -161,6 +166,7 @@ the space listing appears on the user's Reserved Rooms tab
 ### User can chat with host or vice versa (if they want) in a separate tab (user has to first tap the message button in host's bio/ listing)
 
 **@IBAction** when user taps on message icon under the host's info to talk to host {
+
     GOTO: Messages tab
     User can message host
     if user taps on host's name on the top{
@@ -181,6 +187,7 @@ the space listing appears on the user's Reserved Rooms tab
 ### Whatever listing user booked appears here
 
 if user booked any spaces {
+
     query the database for listing and its details 
     show all listings that are booked by user for future reservations
 }
@@ -188,12 +195,14 @@ if user booked any spaces {
 ### User gets the exact location of venue for the space
 
 for all the spaces available {
+
     show the exact location/ address for all the spaces
 }
 
 ### User gets a confirmation receipt and verification code
 
 **@IBAction** when user presses "OK" on confirmation screen {
+
     DISMISS: Current Screen
     GOTO: Reserved Rooms View Controller
 }
@@ -201,10 +210,12 @@ for all the spaces available {
 ### [Check-in]- User uses a QR code scanner to unlock door/ lockbox to get keys
 
 **@IBAction** when user taps the QR code button in listing details {
+
     Show the QR Code Scanner Screen
 }
 
 **@IBAction** when user scans the QR code {
+
     For the specific room, exact qr code 
     If a host is lending out 2 or more rooms, then QR codes for all those rooms will be registered with the main door to unlock it.
 
@@ -224,6 +235,7 @@ for all the spaces available {
 }
 
 if room lock is not unlocked within 5 minutes after unlocking main door {
+
     activate sensors to see where user is
     notify the host for them to track user for security measures
 }
@@ -231,10 +243,12 @@ if room lock is not unlocked within 5 minutes after unlocking main door {
 ### User gets reminder couple minutes before reservation time ends
 
 **@IBAction** OK is pressed when reminder pop us is presented {
+
     DISMISS: popup message
 }
 
 **@IBAction** when screen pops up if they want to reserve for more time {
+
     if YES {
         Ask for how many more hours
         if anyone else reserved during that time {
@@ -252,12 +266,14 @@ if room lock is not unlocked within 5 minutes after unlocking main door {
 }
 
 if user's unique key is stored and they did not pay for extra time {
+
     Charge them room charge + tax + fine for every additional minute spent
 }
 
 ### [Check-out]- User scans the lockbox again so that the key is back/ door is locked and ready to for the next user
 
 **@IBAction** when user scans the QR code {
+
     User's unique key is removed from the lockbox/ door lock database
     When checking out, user must close the door and check out from the outside
     if user unlocks the door when no key is there {
@@ -307,6 +323,7 @@ if user's unique key is stored and they did not pay for extra time {
 ## User goes to Settings
 
 **@IBAction** when "My Profile" button is pressed {
+
     GOTO: My Profile View Controller
     Show User's Photo, Bio, Name, Phone number, email
     Button at the Bottom: "Verify my profile" if user did not verify
@@ -314,6 +331,7 @@ if user's unique key is stored and they did not pay for extra time {
 }
 
 **@IBAction** when user clicks on verify profile button {
+
     GOTO: Camera 
     takes a picture of their face + hand gestures for authenticity
     using ML and computer vision, it verifies that user and profile photo match
@@ -327,12 +345,14 @@ if user's unique key is stored and they did not pay for extra time {
 }
 
 **@IBAction** when "Payments" button is pressed {
+
     GOTO: Payments View Controller
 }
 
 ### Update Profile
 
 **@IBAction** when "Save" button is pressed {
+
     if any user details (photo, name, email, etc.) = nil {
         Error Message: "Please enter in all the user details."
         DISMISS: "OK" button
@@ -348,12 +368,14 @@ if user's unique key is stored and they did not pay for extra time {
 ### Update Payment Method
 
 **@IBAction** when "Add Card" button is pressed {
+
     add a credit/ debit card 
     verify the card and add it to payments list
     Card is added to database
 }
 
 **@IBAction** when "Add Cash to Account" button is pressed {
+
     ask user how much money to add 
     suggested: $20, $40, $60, custom (absolute value)
     In case there isn't enough balance, money is drawn from selected card
@@ -361,6 +383,7 @@ if user's unique key is stored and they did not pay for extra time {
 }
 
 **@IBAction** when "Add coupon code" button is pressed {
+
     if coupon code = valid {
         add corresponding cash value to user's account balance
     }
@@ -375,6 +398,7 @@ if user's unique key is stored and they did not pay for extra time {
 
 ## Navigate to Host Account from User Account
 **@IBAction** when user presses "switches to host" button {
+
     if host account is not created {
         GOTO: Create Host Account View Controller
     }
@@ -385,12 +409,14 @@ if user's unique key is stored and they did not pay for extra time {
 
 ## Create Host Account
 **@IBAction** when host clicks on the sign up button {
+
     Details from User account are used
     GOTO: Terms and Conditions 
 }
 
 ### Host goes to Terms and Conditions (separate for hosts)
 **@IBAction** when user clicks on "Agree" and checks all the boxes {
+
     if any of the boxes are not checked {
         Error Message: "Please make sure you agree to all the terms and conditions before proceeding"
         DISMISS: "OK"
@@ -400,7 +426,9 @@ if user's unique key is stored and they did not pay for extra time {
 
 ### Background Check (First time hosts only)
 Host will not be able to post rooms or spaces publicly without doing a background check and getting approved.
+
 **@IBAction** when host schedules a time to do a background check{
+
     1 of 2 possibilities:
     - someone will visit (will show their ID) to clear host during scheduled time
     - host has to go to an office 
@@ -428,6 +456,7 @@ GOTO: Payment Method View Controller
 
 ### Host goes to Payment method to add bank/ card details
 **@IBAction** when "Add Bank Details" button is pressed {
+
     if bank details (account number, routing number) or card details are verified {
         Message: "Success!"
         show the bank details or card number
@@ -452,25 +481,30 @@ Note: by default, spaces are online and can be viewed publicly.
     - If user tries to book a space on a blackout day, the bot notifies them and tells them the next available date of that particular space
 
 if hosts have only one space {
+
     Go online/ offline toggle switch or a circular button that gets highlighted
 }
 if hosts have multiple spaces {
+
     Button: "Update Room statuses"
     if this button is pressed {
         show a list of all rooms added by host
         each room listing will have a toggle switch on the right side to go online/ offline
     }
 }
+
 Going online- Listing can be viewed publicly
 Going offline- Listing will be hidden publicly
 
 ### Host can set one time/ periodic black out dates for specific rooms on a daily, weekly, or monthly basis
 
 if hosts have only one space {
+
     The "schedule time" button opens up a daily, weekly, or monthly calendar 
     user can highlight dates and times that space is blacked out for
 }
 if hosts have multiple spaces {
+
     The "schedule time button" opens a list of user's spaces
     if user taps on a space, a calendar shows up that is daily weekly, and monthly
     user can highlight dates and times that space is blacked out for
@@ -481,6 +515,7 @@ if hosts have multiple spaces {
 ### When user book a host's room
 
 if customer books a host's room/ space {
+
     If a user books a host's room, the host is notified by the bot through the chat tab. 
     This notification would appear under that specific customer's chat.
 }
@@ -488,6 +523,7 @@ if customer books a host's room/ space {
 ### When host taps on a customer from the list
 
 **@IBAction** Host taps on a customer from the list {
+
     GOTO: Customer Details View Controller
     show all the details of customer, including name, bio, picture, email
     show details of the reservation (date, time, duration (hours), how many people, total cost)
@@ -497,6 +533,7 @@ if customer books a host's room/ space {
 ### Chatting: done in a separate tab
 
 **@IBAction** when host taps on message icon under the user's info to talk to user {
+
     GOTO: Messages tab
     Host can message user
     if host taps on user's name on the top{
@@ -518,10 +555,12 @@ if customer books a host's room/ space {
 ### Add a Room/ Space
 
 **@IBAction** when "+" button is pressed in My Rooms View Controller {
+
     GOTO: Create Room View Controller
 }
 
 **@IBAction** when "Done" button is pressed {
+
     if all text fields, descriptions, address and pictures are uploaded {
         if this is the first room uploaded {
             save room details to database
@@ -547,6 +586,7 @@ if customer books a host's room/ space {
 ### Room/ Home Inspection to verify space
 
 **@IBAction** when host clicks on an available time and date {
+
     GOTO: Confirm Inspection View Controller
     A person with a verified ID comes at scheduled time to inspect the house and room for safety
     the room that host added will show "pending" {
@@ -559,15 +599,18 @@ if customer books a host's room/ space {
 ### Host goes to My Rooms View Controller 
 
 After adding a room and/ or scheduling a time for inspection {
+
     query database for new rooms added
     update the listing on the top with the last room that host added
 }
 
 **@IBAction** when host taps on any of the rooms {
+
     room goes to edit mode, so user can make any changes to description, price, pictures
 }
 
 **@IBAction** when host presses the "Save" button {
+
     updates the new information to database
     if any of the textfeilds are empty {
         Error Message: "Please enter in all information before proceeding."
@@ -578,6 +621,7 @@ After adding a room and/ or scheduling a time for inspection {
 
 ### Host goes to My Profile
 **@IBAction** when "My Profile" button is pressed {
+
     GOTO: My Profile View Controller
     Show User's Photo, Bio, Name, Phone number, email
     Button at the Bottom: "Verify my profile" if user did not verify
@@ -587,24 +631,28 @@ After adding a room and/ or scheduling a time for inspection {
 ### Host goes to My Bank and Payment Details to update this information
 
 **@IBAction** when "Add Card" button is pressed {
+
     add a credit/ debit card 
     verify the card and add it to payments list
     Card is added to database
 }
 
 **@IBAction** when "Add Bank Details" button is pressed {
+
     add a bank account number 
     verify the account and add it to list
     bank account information is added to database
 }
 
 **@IBAction** when "Add Cash to Account" button is pressed {
+
     ask host how much money to add 
     suggested: $20, $40, $60, custom (absolute value)
     Amount value is added to database, this balance is in sync with user profile
 }
 
 **@IBAction** when "Add coupon code" button is pressed {
+
     if coupon code = valid {
         add corresponding cash value to user's account balance
     }
@@ -619,6 +667,7 @@ After adding a room and/ or scheduling a time for inspection {
 ## General
 
 After signing up: 
+
     bot introduces itself to user: "Hello there, Sashank! I'm Mac, your personal assistant. Welcome to The RoomApp!
     bot says: "I'm here to help you simplify your experience when using this service."
     bot says: "Some of the things I can do is give reminders about your room reservations, guide you from booking the right space, navigating to the space you've reserved, and making your checkin/ checkout easier, and everything else in between!"
@@ -627,18 +676,22 @@ After signing up:
     bot says: "I hope you have a great time using The RoomApp!"
 
 There will be a bot for the user and host in every chat box. Whatever they ask the bot and the response they get can only be seen by them. 
+
 There is also a separate chatbox for the bot for the user/ host to DM for tutorials and help (This also works in the user- host chat boxes, but they get deleted after 24 hours)
+
 Bots can send messages and alerts for user and host. Examples of alerts are user booking a room, reminders for reservation time left, emergency/ security situations, etc. Certain messages can also be set as alerts, and some alerts can be set as messages.
 
 ## User- specific
 
 When user confirms a reservation for a space
+
     Bot says these in the chat box with host of that space (Will get in-app notifications as well)
     bot says: "Your reservation for this room on [day] from [start-time] to [end-time] is confirmed!"
     bot says: "Here's the address: [address]"
         Note: address will also be shown under the room listing in Reserved Rooms View Controller    
 
 When the user checks in through the main door
+
     bot says: "Go straight past the living room and turn right in the hallway. Your room should be on the left."
     Note: User can check in to their room at the reservation start time, and has ~ 5 minutes (depending on size and layout of the house) to check into the room. 
           User can check in through the main entrance ~ 5 minutes before start time
@@ -658,11 +711,14 @@ When the user checks in through the main door
     }
 
 After the user checks in through the room door
+
     bot says: "You've checked in! You have a reservation until 4:00 pm. I'll notify you 15 minutes and 5 minutes before the reservation ends. Let me know anytime if you want to extend your reservation."
     first time user ever checks in: "You can change the timer and frequency of the reminders by asking me directly through the chat or settings. However, the 5 minute reminder is defaulted for everyone and cannot be changed."
 
 Before the user checks out
+
     At the 15 minute mark:
+    
     if there is no other reservation at end time (in this example, 4:00 pm) {
         bot says: "You have 15 minutes before your reservation ends! Would you like to extend it for more time?"
             Options -> Yes -- No
@@ -701,6 +757,7 @@ Before the user checks out
 Note: User has to check out of the room by the reservation end time, and has ~ 5 minutes (depending on size and layout of the house) to check out of the main entrance
 
 After user checks out from the room
+
     bot says: "To get to the main door, Go to the entrance of the hallway, go past the living room, and turn left."
 
     if it is more than 5 minutes since user checked out from room but has to check out through main door {
@@ -717,22 +774,27 @@ After user checks out from the room
     }
 
 If user hasn't check out by the allotted time
+
     bot says: "Uh- oh, it looks like you haven't checked out by the allotted time! You will be charged $2 (depending on location, price of room, demand for immediate reservation) for every extra minute you spend until you check out."
 
 After user checks out from the main door
+
     bot says: "Thank you for reserving this room! Please tap here to rate the room and the host's service."
     (This screen will also pop up after checking out)
     User has 2 hours to respond to this rating. If not, this message will disappear.
 
 If user books a space on any of its blackout days
+
     bot says: "I'm sorry, this space isn't available during this time/ day/ week. Let me know if you want to reserve this space on a different time."
 
 ## Host- specific
 
 After host does a background check and creates an account
+
     Bot introduces itself again, but lists out tasks it can do in a host account
 
 After posting a room
+
     Bot will ask: 
         What amenities are there (restroom, shower, printer, monitor, whiteboard, etc.)?
         How much time do you want to give the user to go from main door to checking in at the front door (minimum is 5 minutes)
@@ -740,11 +802,13 @@ After posting a room
         Will you allow the user to extend their room reservation if no other user has reserved for the time right after (up until the next reservation)?
 
 When user books a space
+
     bot says: "User book your space on Wednesday, April 5th 2020 from 1:00 pm to 4:00 pm!"
     If user cancels the reservation
         bot says: "User cancelled his/ her reservation of your space on Wednesday, April 5th 2020 from 1:00 pm to 4:00 pm!"
 
 Before user checks in
+
     If any user actions is flagged as suspicious activity
         bot says: "it has been more than 5 minutes since User checked in from the main door, but not into the allotted room. The motion sensors are now activated and will update any suspicious movements.
     If user wanted help from the host for navigating
@@ -755,16 +819,19 @@ Before user checks in
             bot says: "I just turned on the motion sensors"
 
 Before checking out
+
     If user extends their reservation time
         bot says: "User just extended their time by 3 hours, so you just earned an extra $78!"
 
 If user checks out late 
+
     bot says: "User has stayed past his allotted reservation time! If there is another reservation right after, make sure you inform the next user as soon as possible."
     After user checks out late:     
         Tell how much fine they spent and how many extra minutes they stayed
         bot says: "User has stayed for 5 extra minutes and payed $10 as fine."
 
 After user checks out
+
     If user gives any tip
         bot says: "User just gave you a tip of $10!"
     If user gives any comments
