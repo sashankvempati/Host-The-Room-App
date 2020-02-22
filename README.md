@@ -17,7 +17,7 @@
 ### Login
 
 **@IBAction** when login button is pressed{
-	if username/ password is not nil {
+```	if username/ password is not nil {
 		
         if username/ password is incorrect {
             Error message: "Incorrect username or password"
@@ -35,7 +35,7 @@
             DISMISS: *OK*
         }
 	}
-}
+}```
 
 ### Signup/ Verify profile using ID
 **@IBAction** when Create a New Account button is pressed {
