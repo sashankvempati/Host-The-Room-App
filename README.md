@@ -17,6 +17,7 @@
 ### Login
 
 **@IBAction** when login button is pressed{
+
 	if username/ password is not nil {
 		
         if username/ password is incorrect {
@@ -39,10 +40,12 @@
 
 ### Signup/ Verify profile using ID
 **@IBAction** when Create a New Account button is pressed {
+
     GOTO: Sign Up View Controller
 }
 
 **@IBAction** when Sign Up button is pressed{
+
     if username, password, photo, email, phone number are not nil {
         if password != confirm password {
             Error message: "The passwords do not match"
@@ -65,6 +68,7 @@
 }
 
 **@IBAction** when user clicks on verify profile button {
+
     GOTO: Camera
     takes a picture of their face + hand gestures for authenticity
     using ML and computer vision, it verifies that user and profile photo match
@@ -74,6 +78,7 @@
 
     User can also verify email and phone number for even stronger verification and more trust
 }
+
 if user skips verify profile, remind user again to verify profile before reserving a space if they havent verified yet
 also notify user that they could verify profile in the "My Profile" section in Settings tab
 User cannot reserve a space without verifying their account.
@@ -81,6 +86,7 @@ User cannot reserve a space without verifying their account.
 ### Add Payment Method 
 
 **@IBAction** when Payment method is added {
+
     if credit card/ other payment method is verified and approved {
         Success!
         Show the added card
