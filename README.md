@@ -1,3 +1,7 @@
+# The RoomApp- Walkthrough GIF
+
+<img src="https://recordit.co/WtmCsuXzbp.gif" width=250><br>
+
 # The RoomApp- Algorithm
 # KEY: 
  **@IB Action** Action event buttons that executes a function when triggered
